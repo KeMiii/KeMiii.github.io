@@ -1602,6 +1602,11 @@ img {
         display: none;
     }
     
+    .about-image {
+        max-width: 75vw !important;
+        margin: 0 auto var(--space-xl) !important;
+    }
+    
     .nav-toggle {
         display: flex;
     }
