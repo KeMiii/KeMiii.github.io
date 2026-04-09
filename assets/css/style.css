@@ -1575,7 +1575,7 @@ img {
     .about-image {
         position: relative;
         top: 0;
-        max-width: 250px;
+        max-width: 320px;
         margin: 0 auto;
     }
     
