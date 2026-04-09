@@ -19,6 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
     initParticles();
     initQRCode();
     initRevealAnimations();
+    
+    // Initialize COS image optimization
+    if (typeof imageOptimizer !== 'undefined') {
+        initCOSImageOptimization();
+    }
 });
 
 /**
@@ -479,3 +484,33 @@ console.log('%c AR Designer & Developer ', 'background: #8b5cf6; color: white; p
 console.log('Welcome to my personal website! Feel free to explore.');
 console.log('GitHub: https://github.com/KeMiii');
 console.log('Email: kemi24678@gmail.com');
+
+/**
+ * COS Image Optimization Initialization
+ * 腾讯云 COS 图片优化初始化
+ */
+function initCOSImageOptimization() {
+    // 关键图片预加载
+    const criticalImages = [
+        'images/avatar.jpg',
+        'images/数字仓城.png',
+        'images/ar-exhibition/cover.jpg',
+    ];
+    
+    if (typeof preloadImages === 'function') {
+        preloadImages(criticalImages);
+    }
+
+    // 优化所有 COS 图片
+    if (typeof imageOptimizer !== 'undefined' && imageOptimizer) {
+        imageOptimizer.optimizeAllImages();
+    }
+
+    // 监控图片加载
+    if (typeof setupImageMonitoring === 'function') {
+        setupImageMonitoring();
+    }
+
+    // 输出优化信息
+    console.log('%c COS Image Optimization Enabled ', 'background: #10b981; color: white; padding: 5px 10px; border-radius: 3px;');
+}
