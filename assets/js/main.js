@@ -99,7 +99,15 @@ function initMobileNav() {
     const mobileNav = document.getElementById('mobileNav');
     const mobileLinks = document.querySelectorAll('.mobile-nav-link');
 
-    navToggle?.addEventListener('click', () => {
+    function closeMobileNav() {
+        mobileNav?.classList.remove('active');
+        navToggle.innerHTML = '<i data-lucide="menu"></i>';
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+    }
+
+    function toggleMobileNav() {
         mobileNav?.classList.toggle('active');
         const isOpen = mobileNav?.classList.contains('active');
         navToggle.innerHTML = isOpen 
@@ -108,17 +116,36 @@ function initMobileNav() {
         if (typeof lucide !== 'undefined') {
             lucide.createIcons();
         }
-    });
+    }
+
+    navToggle?.addEventListener('click', toggleMobileNav);
 
     // Close mobile nav when clicking a link
     mobileLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            mobileNav?.classList.remove('active');
-            navToggle.innerHTML = '<i data-lucide="menu"></i>';
-            if (typeof lucide !== 'undefined') {
-                lucide.createIcons();
-            }
-        });
+        link.addEventListener('click', closeMobileNav);
+    });
+
+    // Close mobile nav when clicking outside (on the backdrop/overlay area)
+    mobileNav?.addEventListener('click', (e) => {
+        // Only close if clicking directly on the mobile-nav (backdrop), not its children
+        if (e.target === mobileNav) {
+            closeMobileNav();
+        }
+    });
+
+    // Close mobile nav when clicking anywhere else on the page
+    document.addEventListener('click', (e) => {
+        if (!mobileNav?.classList.contains('active')) return;
+        if (!mobileNav?.contains(e.target) && !navToggle?.contains(e.target)) {
+            closeMobileNav();
+        }
+    });
+
+    // Close on ESC key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileNav?.classList.contains('active')) {
+            closeMobileNav();
+        }
     });
 }
 
