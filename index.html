@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="黄笑尘 (Kemi) - 韩国留学归国设计师 / AR 开发者，专注 AR 交互、Unity3D 开发与视觉计算">
+    <meta name="author" content="Kemi Huang">
+    <meta name="theme-color" content="#7c3aed">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Kemi Huang | AR Designer & Developer">
+    <meta property="og:description" content="韩国留学归国设计师 / AR 开发者，专注 AR 交互、Unity3D 开发与视觉计算">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kemiii.github.io">
+    
+    <title>Kemi Huang | AR Designer & Developer</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    
+    <!-- QRCode.js -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <span class="logo-text">KEMI</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="切换菜单">
+                <i data-lucide="menu"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#about" class="nav-link">关于</a></li>
+                <li><a href="#resume" class="nav-link">简历</a></li>
+                <li><a href="#portfolio" class="nav-link">作品</a></li>
+                <li><a href="#photography" class="nav-link">摄影</a></li>
+                <li><a href="#drawings" class="nav-link">习作</a></li>
+                <li><a href="#contact" class="nav-link">联系</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+                <i data-lucide="sun" class="icon-sun"></i>
+                <i data-lucide="moon" class="icon-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 移动端导航 -->
+    <div class="mobile-nav" id="mobileNav">
+        <ul class="mobile-nav-menu">
+            <li><a href="#about" class="mobile-nav-link">关于</a></li>
+            <li><a href="#resume" class="mobile-nav-link">简历</a></li>
+            <li><a href="#portfolio" class="mobile-nav-link">作品</a></li>
+            <li><a href="#photography" class="mobile-nav-link">摄影</a></li>
+            <li><a href="#drawings" class="mobile-nav-link">习作</a></li>
+            <li><a href="#contact" class="mobile-nav-link">联系</a></li>
+        </ul>
+    </div>
+
+    <!-- 英雄区域 -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <div class="hero-gradient"></div>
+            <div class="hero-particles" id="particles"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                <span>Available for opportunities</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-en">KEMI HUANG</span>
+                <span class="title-cn">黄 笑 尘</span>
+            </h1>
+            <p class="hero-subtitle">
+                <span class="typewriter" id="typewriter">
+                    <span class="typewriter-text"></span>
+                    <span class="typewriter-cursor">|</span>
+                </span>
+            </p>
+            <div class="hero-tags">
+                <span class="tag">AR Designer</span>
+                <span class="tag">Unity3D Developer</span>
+                <span class="tag">Computer Engineering</span>
+            </div>
+            <div class="hero-cta">
+                <a href="#portfolio" class="btn btn-primary">
+                    <span>查看作品</span>
+                    <i data-lucide="arrow-right"></i>
+                </a>
+                <a href="#contact" class="btn btn-secondary">联系我</a>
+            </div>
+            <div class="hero-scroll">
+                <i data-lucide="chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于区域 -->
+    <section class="section about" id="about">
+        <div class="floating-orb"></div>
+        <div class="floating-orb"></div>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">01</span>
+                <h2 class="section-title">关于我</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="image-frame">
+                        <!-- 
+                            更换头像方法：
+                            1. 将头像图片上传到 assets/images/ 目录
+                            2. 将下方 img 标签的 src 改为你的图片路径，如：src="assets/images/your-photo.jpg"
+                            3. 图片加载成功后 K 字母会自动隐藏
+                        -->
+                        <img src="assets/images/avatar.jpg" alt="Kemi Huang" class="avatar-img" 
+                             onload="this.style.opacity='1'; this.nextElementSibling.style.opacity='0';"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.opacity='1';">
+                        <div class="image-placeholder" style="opacity: 1;">
+                            <span>K</span>
+                        </div>
+                        <div class="image-decoration"></div>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h3 class="about-intro">
+                        设计师 / 开发者 / 创作者
+                    </h3>
+                    <p class="about-desc">
+                        上海工程技术大学数字媒体艺术本科毕业后，我有幸被导师推荐至韩国东西大学 <a href="https://sites.google.com/view/instituteofambientintelligence/home" target="_blank" class="inline-link">IAI 研究所</a>，跟随李秉国教授深入研究 AR 交互与视觉计算。虽然毕业证书标注的是计算机工程，但我始终在设计的边界探索——从 Unity3D 开发到 Vuforia AR 实现，从用户交互到视觉呈现。
+                    </p>
+                    <p class="about-desc">
+                        我相信好的技术应该服务于好的体验，而好的设计也需要技术的支撑。这份跨界的背景让我能够更好地在设计与技术之间找到平衡点，创造出既有美感又有功能的数字产品。
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">2</span>
+                            <span class="stat-label">段实习经历</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">2</span>
+                            <span class="stat-label">个毕业项目</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">种语言能力</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 简历区域 -->
+    <section class="section resume" id="resume">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">02</span>
+                <h2 class="section-title">简历</h2>
+                <a href="./assets/resume.pdf" class="btn btn-outline download-btn" download>
+                    <i data-lucide="download"></i>
+                    <span>下载 PDF</span>
+                </a>
+            </div>
+            <div class="resume-content">
+                <!-- 教育背景 -->
+                <div class="resume-section">
+                    <h3 class="resume-section-title">
+                        <i data-lucide="graduation-cap"></i>
+                        教育背景
+                    </h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h4 class="timeline-title">韩国东西大学</h4>
+                                    <span class="timeline-date">2023.09 — 2025.08</span>
+                                </div>
+                                <p class="timeline-subtitle">计算机工程 · 工学硕士</p>
+                                <p class="timeline-desc">
+                                    东西大学 IAI 研究所，师从李秉国教授。<br>
+                                    主修：增强现实系统设计、计算机图形学、图像处理、视觉计算、人机交互、交互媒体系统
+                                </p>
+                                <div class="timeline-highlight">
+                                    <span class="highlight-badge">全额奖学金</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h4 class="timeline-title">上海工程技术大学</h4>
+                                    <span class="timeline-date">2019.09 — 2023.06</span>
+                                </div>
+                                <p class="timeline-subtitle">数字媒体艺术 · 艺术学学士</p>
+                                <p class="timeline-desc">
+                                    主修：数字媒体设计基础、交互设计、三维建模与动画、视觉传达设计、新媒体艺术、动态影像设计
+                                </p>
+                                <div class="timeline-highlight">
+                                    <span class="highlight-badge">学校技术进步奖</span>
+                                    <span class="highlight-badge">优秀学生</span>
+                                    <span class="highlight-badge">学生会优秀干部</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 实习经历 -->
+                <div class="resume-section">
+                    <h3 class="resume-section-title">
+                        <i data-lucide="briefcase"></i>
+                        实习经历
+                    </h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h4 class="timeline-title">腾讯</h4>
+                                    <span class="timeline-date">2020.01 — 2020.02</span>
+                                </div>
+                                <p class="timeline-subtitle">产品设计实习生</p>
+                                <p class="timeline-desc">
+                                    参与《艾兰岛（Ylands）》相关项目的产品设计支持工作，协助设计团队推进功能与体验优化。负责用户需求信息收集与整理，对用户反馈进行分类与归纳，支持产品需求分析。配合完成需求文档整理与内部沟通材料，支持设计与研发协作流程。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h4 class="timeline-title">上海城市动漫出版传媒有限公司</h4>
+                                    <span class="timeline-date">2019.11 — 2020.01</span>
+                                </div>
+                                <p class="timeline-subtitle">动画制作助理</p>
+                                <p class="timeline-desc">
+                                    参与嘉定故事系列连环画微动画《嘉定第一位共产党员陈君起》项目制作。负责线描修改、素材分层与上色处理，配合完成动画制作流程。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 技能工具 -->
+                <div class="resume-section">
+                    <h3 class="resume-section-title">
+                        <i data-lucide="wrench"></i>
+                        技能工具
+                    </h3>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4 class="skill-category-title">引擎 / 开发</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Unity3D</span>
+                                <span class="skill-tag">Vuforia</span>
+                                <span class="skill-tag">UE4</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4 class="skill-category-title">技术方向</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">AR 交互</span>
+                                <span class="skill-tag">可视化</span>
+                                <span class="skill-tag">视觉计算</span>
+                                <span class="skill-tag">图像处理</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4 class="skill-category-title">图形 / 影像</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Photoshop</span>
+                                <span class="skill-tag">Premiere Pro</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4 class="skill-category-title">生成式 AI</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">信息整理</span>
+                                <span class="skill-tag">方案推演</span>
+                                <span class="skill-tag">开发辅助</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 语言能力 -->
+                <div class="resume-section">
+                    <h3 class="resume-section-title">
+                        <i data-lucide="languages"></i>
+                        语言能力
+                    </h3>
+                    <div class="languages-grid">
+                        <div class="language-item">
+                            <span class="language-name">中文</span>
+                            <span class="language-level">母语</span>
+                        </div>
+                        <div class="language-item">
+                            <span class="language-name">英语</span>
+                            <span class="language-level">日常交流</span>
+                        </div>
+                        <div class="language-item">
+                            <span class="language-name">韩语</span>
+                            <span class="language-level">TOPIK 2</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 作品集区域 -->
+    <section class="section portfolio" id="portfolio">
+        <div class="section-grid"></div>
+        <div class="floating-orb"></div>
+        <div class="floating-orb"></div>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">03</span>
+                <h2 class="section-title">作品集</h2>
+            </div>
+            <div class="portfolio-grid portfolio-grid-3col">
+                <!-- 项目 1: 数字仓城 -->
+                <article class="portfolio-card" onclick="window.open('https://www.bilibili.com/video/BV1Mh4y1V79e/', '_blank')">
+                    <div class="card-image">
+                        <img src="assets/images/数字仓城.png" alt="数字仓城虚拟沙盘" class="portfolio-img"
+                             onerror="this.parentElement.querySelector('.card-placeholder').style.display='flex';">
+                        <div class="card-placeholder unity-bg" style="display: none;">
+                            <i data-lucide="box"></i>
+                            <span>Unity</span>
+                        </div>
+                        <div class="card-overlay">
+                            <i data-lucide="play"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-tag">VR</span>
+                            <span class="card-date">2022-2023</span>
+                        </div>
+                        <h3 class="card-title">数字仓城虚拟沙盘</h3>
+                        <p class="card-subtitle">本科毕业设计</p>
+                        <div class="card-tech">
+                            <span>Unity</span>
+                            <span>摄影测量</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 项目 2: AR 互动展览 -->
+                <article class="portfolio-card video-card" data-video="local" data-src="assets/images/ar-exhibition/WeChat_20241103023952.mp4">
+                    <div class="card-image">
+                        <img src="assets/images/ar-exhibition/cover.jpg" alt="AR互动展览" class="portfolio-img" 
+                             onerror="this.parentElement.querySelector('.card-placeholder').style.display='flex'; this.style.display='none';">
+                        <div class="card-placeholder ar-bg" style="display: none;">
+                            <i data-lucide="scan"></i>
+                            <span>AR</span>
+                        </div>
+                        <div class="card-overlay">
+                            <i data-lucide="play"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-tag">AR</span>
+                            <span class="card-date">2024-2025</span>
+                        </div>
+                        <h3 class="card-title">AR 互动展览用益智游戏系统</h3>
+                        <p class="card-subtitle">硕士毕业设计</p>
+                        <div class="card-tech">
+                            <span>Unity3D</span>
+                            <span>Vuforia</span>
+                        </div>
+                        <div class="card-links">
+                            <a href="https://github.com/KeMiii/AR-Game-System" class="card-link" target="_blank">
+                                <i data-lucide="github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+
+
+                <!-- 项目 4: 角色设计来福 -->
+                <article class="portfolio-card" onclick="openGallery('laifu')">
+                    <div class="card-image">
+                        <img src="assets/images/laifu-character/正面.png" alt="角色设计来福" class="portfolio-img"
+                             onerror="this.parentElement.querySelector('.card-placeholder').style.display='flex';">
+                        <div class="card-placeholder character-bg" style="display: none;">
+                            <i data-lucide="user"></i>
+                            <span>Character</span>
+                        </div>
+                        <div class="card-overlay">
+                            <i data-lucide="images"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-tag">Character Design</span>
+                            <span class="card-date">2021</span>
+                        </div>
+                        <h3 class="card-title">角色设计 - 来福</h3>
+                        <p class="card-subtitle">原创角色设计</p>
+                        <div class="card-tech">
+                            <span>角色设计</span>
+                            <span>绘画</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 项目 5: 石头撞鸡蛋 -->
+                <article class="portfolio-card video-card" data-video="local" data-src="assets/images/stone-egg-animation/final.mp4">
+                    <div class="card-image">
+                        <img src="assets/images/stone-egg-animation/37eba6f9-06cd-46c5-99f4-a04adb201198.png" alt="石头撞鸡蛋" class="portfolio-img"
+                             onerror="this.parentElement.querySelector('.card-placeholder').style.display='flex'; this.style.display='none';">
+                        <div class="card-placeholder animation-bg" style="display: none;">
+                            <i data-lucide="film"></i>
+                            <span>VIDEO</span>
+                        </div>
+                        <div class="card-overlay">
+                            <i data-lucide="play"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-tag">Animation</span>
+                            <span class="card-date">2022</span>
+                        </div>
+                        <h3 class="card-title">石头撞鸡蛋</h3>
+                        <p class="card-subtitle">动画短片</p>
+                        <div class="card-tech">
+                            <span>动画</span>
+                            <span>视频</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 项目 6: 元宇宙海上灵境 -->
+                <article class="portfolio-card video-card" data-video="local" data-src="assets/images/metaverse/4.视频+112119108+黄笑尘+112119122+赵浩云.mp4">
+                    <div class="card-image">
+                        <img src="assets/images/metaverse/1.效果图 (1).jpg" alt="元宇宙海上灵境" class="portfolio-img"
+                             onerror="this.parentElement.querySelector('.card-placeholder').style.display='flex';">
+                        <div class="card-placeholder metaverse-bg" style="display: none;">
+                            <i data-lucide="globe"></i>
+                            <span>Metaverse</span>
+                        </div>
+                        <div class="card-overlay">
+                            <i data-lucide="play"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-tag">Metaverse</span>
+                            <span class="card-date">2022</span>
+                        </div>
+                        <h3 class="card-title">海上灵境</h3>
+                        <p class="card-subtitle">元宇宙概念设计</p>
+                        <div class="card-tech">
+                            <span>元宇宙</span>
+                            <span>概念设计</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 摄影区域 -->
+    <section class="section photography" id="photography">
+        <div class="floating-orb"></div>
+        <div class="floating-orb"></div>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">04</span>
+                <h2 class="section-title">摄影</h2>
+            </div>
+            <p class="section-intro">
+                镜头背后的观察者。用相机记录生活中的光影与瞬间。
+            </p>
+            <!-- 画廊模式 -->
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openGalleryByIndex('photos', 0)">
+                    <img src="assets/images/photos/-26b805db91ead6d3.jpg" alt="摄影作品" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <i data-lucide="expand"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openGalleryByIndex('photos', 1)">
+                    <img src="assets/images/photos/-3146d18872f02db.jpg" alt="摄影作品" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <i data-lucide="expand"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openGalleryByIndex('photos', 2)">
+                    <img src="assets/images/photos/-69105513f0780b2a.jpg" alt="摄影作品" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <i data-lucide="expand"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openGalleryByIndex('photos', 3)">
+                    <img src="assets/images/photos/-715a47ad1e13aff8.jpg" alt="摄影作品" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <i data-lucide="expand"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openGalleryByIndex('photos', 4)">
+                    <img src="assets/images/photos/1591886103194.jpeg" alt="摄影作品" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <i data-lucide="expand"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openGalleryByIndex('photos', 5)">
+                    <img src="assets/images/photos/1593134040207.jpeg" alt="摄影作品" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <i data-lucide="expand"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openGalleryByIndex('photos', 6)">
+                    <img src="assets/images/photos/1596598491110.jpeg" alt="摄影作品" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <i data-lucide="expand"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openGalleryByIndex('photos', 7)">
+                    <img src="assets/images/photos/3691991c92890620.jpg" alt="摄影作品" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <i data-lucide="expand"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openGalleryByIndex('photos', 8)">
+                    <img src="assets/images/photos/7589aacc41c684bb.jpg" alt="摄影作品" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <i data-lucide="expand"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 习作区域 -->
+    <section class="section drawings" id="drawings">
+        <div class="floating-orb"></div>
+        <div class="floating-orb"></div>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">05</span>
+                <h2 class="section-title">习作</h2>
+            </div>
+            <p class="section-intro">
+                手绘练习作品。素描、色彩，记录绘画成长的每一步。
+            </p>
+            
+            <!-- 毛玻璃画廊 -->
+            <div class="glass-gallery">
+                <div class="glass-card" onclick="openGalleryByIndex('drawings', 0)">
+                    <div class="glass-card-image">
+                        <img src="assets/images/drawings/1580143441446.jpeg" alt="习作" loading="lazy">
+                    </div>
+                    <div class="glass-card-shine"></div>
+                </div>
+                
+                <div class="glass-card" onclick="openGalleryByIndex('drawings', 1)">
+                    <div class="glass-card-image">
+                        <img src="assets/images/drawings/20170813_152325.jpg" alt="习作" loading="lazy">
+                    </div>
+                    <div class="glass-card-shine"></div>
+                </div>
+                
+                <div class="glass-card" onclick="openGalleryByIndex('drawings', 2)">
+                    <div class="glass-card-image">
+                        <img src="assets/images/drawings/20180211_181046.jpg" alt="习作" loading="lazy">
+                    </div>
+                    <div class="glass-card-shine"></div>
+                </div>
+                
+                <div class="glass-card" onclick="openGalleryByIndex('drawings', 3)">
+                    <div class="glass-card-image">
+                        <img src="assets/images/drawings/20180802_180845.jpg" alt="习作" loading="lazy">
+                    </div>
+                    <div class="glass-card-shine"></div>
+                </div>
+                
+                <div class="glass-card" onclick="openGalleryByIndex('drawings', 4)">
+                    <div class="glass-card-image">
+                        <img src="assets/images/drawings/20181026_174341.jpg" alt="习作" loading="lazy">
+                    </div>
+                    <div class="glass-card-shine"></div>
+                </div>
+                
+                <div class="glass-card" onclick="openGalleryByIndex('drawings', 5)">
+                    <div class="glass-card-image">
+                        <img src="assets/images/drawings/20181102_175825.jpg" alt="习作" loading="lazy">
+                    </div>
+                    <div class="glass-card-shine"></div>
+                </div>
+                
+                <div class="glass-card" onclick="openGalleryByIndex('drawings', 6)">
+                    <div class="glass-card-image">
+                        <img src="assets/images/drawings/20181109_180159.jpg" alt="习作" loading="lazy">
+                    </div>
+                    <div class="glass-card-shine"></div>
+                </div>
+                
+                <div class="glass-card" onclick="openGalleryByIndex('drawings', 7)">
+                    <div class="glass-card-image">
+                        <img src="assets/images/drawings/20190721_180318.jpg" alt="习作" loading="lazy">
+                    </div>
+                    <div class="glass-card-shine"></div>
+                </div>
+                
+                <div class="glass-card" onclick="openGalleryByIndex('drawings', 8)">
+                    <div class="glass-card-image">
+                        <img src="assets/images/drawings/mmexport1564134637766.jpg" alt="习作" loading="lazy">
+                    </div>
+                    <div class="glass-card-shine"></div>
+                </div>
+                
+                <div class="glass-card" onclick="openGalleryByIndex('drawings', 9)">
+                    <div class="glass-card-image">
+                        <img src="assets/images/drawings/mmexport1576306772630.jpg" alt="习作" loading="lazy">
+                    </div>
+                    <div class="glass-card-shine"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系区域 -->
+    <section class="section contact" id="contact">
+        <div class="floating-orb"></div>
+        <div class="floating-orb"></div>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">06</span>
+                <h2 class="section-title">联系</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3 class="contact-heading">Let's Connect</h3>
+                    <p class="contact-desc">
+                        无论是工作机会、项目合作还是单纯想聊聊设计和技术，我都期待与你的交流。
+                    </p>
+                    <div class="contact-links">
+                        <a href="mailto:kemi24678@gmail.com" class="contact-link">
+                            <i data-lucide="mail"></i>
+                            <div class="link-content">
+                                <span class="link-label">邮箱</span>
+                                <span class="link-value">kemi24678@gmail.com</span>
+                            </div>
+                        </a>
+                        <a href="mailto:2206813713@qq.com" class="contact-link">
+                            <i data-lucide="mail"></i>
+                            <div class="link-content">
+                                <span class="link-label">QQ 邮箱</span>
+                                <span class="link-value">2206813713@qq.com</span>
+                            </div>
+                        </a>
+                        <a href="tel:18221411630" class="contact-link">
+                            <i data-lucide="phone"></i>
+                            <div class="link-content">
+                                <span class="link-label">手机</span>
+                                <span class="link-value">18221411630</span>
+                            </div>
+                        </a>
+                        <a href="https://github.com/KeMiii" class="contact-link" target="_blank">
+                            <i data-lucide="github"></i>
+                            <div class="link-content">
+                                <span class="link-label">GitHub</span>
+                                <span class="link-value">github.com/KeMiii</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-qr">
+                    <div class="qr-card">
+                        <h4 class="qr-title">扫码访问</h4>
+                        <div class="qr-code" id="qrcode"></div>
+                        <p class="qr-desc">手机扫描二维码<br>直接访问我的网站</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="footer-logo">KEMI</span>
+                    <p class="footer-tagline">设计 × 技术 × 创作</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#about">关于</a>
+                    <a href="#resume">简历</a>
+                    <a href="#portfolio">作品</a>
+                    <a href="#photography">摄影</a>
+                    <a href="#drawings">习作</a>
+                    <a href="#contact">联系</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/KeMiii" target="_blank" aria-label="GitHub">
+                        <i data-lucide="github"></i>
+                    </a>
+                    <a href="mailto:kemi24678@gmail.com" aria-label="Email">
+                        <i data-lucide="mail"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Kemi Huang. All rights reserved.</p>
+                <p>Made with ❤️ in Shanghai</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <!-- 图集模态框 -->
+    <div class="gallery-modal" id="galleryModal">
+        <div class="gallery-backdrop"></div>
+        <div class="gallery-container">
+            <button class="gallery-close" onclick="closeGallery()">
+                <i data-lucide="x"></i>
+            </button>
+            <button class="gallery-nav gallery-prev" onclick="prevImage()">
+                <i data-lucide="chevron-left"></i>
+            </button>
+            <div class="gallery-content">
+                <img class="gallery-image" id="galleryImage" src="" alt="">
+                <div class="gallery-counter" id="galleryCounter"></div>
+            </div>
+            <button class="gallery-nav gallery-next" onclick="nextImage()">
+                <i data-lucide="chevron-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- 视频模态框 -->
+    <div class="video-modal" id="videoModal">
+        <div class="video-backdrop"></div>
+        <div class="video-container">
+            <button class="video-close" onclick="closeVideoModal()">
+                <i data-lucide="x"></i>
+            </button>
+            <div class="video-content" id="videoContent">
+                <!-- 视频或B站嵌入将在这里动态加载 -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 图集数据
+        const galleryData = {
+            'laifu': [
+                'assets/images/laifu-character/正面.png',
+                'assets/images/laifu-character/背面.png',
+                'assets/images/laifu-character/侧面.jpg',
+                'assets/images/laifu-character/角色设计彩稿.png',
+                'assets/images/laifu-character/模型.jpg'
+            ],
+            'photos': [
+                'assets/images/photos/-26b805db91ead6d3.jpg',
+                'assets/images/photos/-3146d18872f02db.jpg',
+                'assets/images/photos/-69105513f0780b2a.jpg',
+                'assets/images/photos/-715a47ad1e13aff8.jpg',
+                'assets/images/photos/1591886103194.jpeg',
+                'assets/images/photos/1593134040207.jpeg',
+                'assets/images/photos/1596598491110.jpeg',
+                'assets/images/photos/3691991c92890620.jpg',
+                'assets/images/photos/7589aacc41c684bb.jpg'
+            ],
+            'drawings': [
+                'assets/images/drawings/1580143441446.jpeg',
+                'assets/images/drawings/20170813_152325.jpg',
+                'assets/images/drawings/20180211_181046.jpg',
+                'assets/images/drawings/20180802_180845.jpg',
+                'assets/images/drawings/20181026_174341.jpg',
+                'assets/images/drawings/20181102_175825.jpg',
+                'assets/images/drawings/20181109_180159.jpg',
+                'assets/images/drawings/20190721_180318.jpg',
+                'assets/images/drawings/mmexport1564134637766.jpg',
+                'assets/images/drawings/mmexport1576306772630.jpg'
+            ]
+        };
+        
+        let currentGallery = [];
+        let currentIndex = 0;
+        
+        function openGallery(type) {
+            currentGallery = galleryData[type];
+            currentIndex = 0;
+            showImage();
+            document.getElementById('galleryModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            lucide.createIcons();
+        }
+        
+        function openGalleryByIndex(type, index) {
+            currentGallery = galleryData[type];
+            currentIndex = index;
+            showImage();
+            document.getElementById('galleryModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            lucide.createIcons();
+        }
+        
+        function closeGallery() {
+            document.getElementById('galleryModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        function showImage() {
+            document.getElementById('galleryImage').src = currentGallery[currentIndex];
+            document.getElementById('galleryCounter').textContent = `${currentIndex + 1} / ${currentGallery.length}`;
+        }
+        
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+            showImage();
+        }
+        
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % currentGallery.length;
+            showImage();
+        }
+        
+        // 点击背景关闭
+        document.querySelector('.gallery-backdrop').addEventListener('click', closeGallery);
+        
+        // 键盘控制
+        document.addEventListener('keydown', (e) => {
+            if (!document.getElementById('galleryModal').classList.contains('active')) return;
+            if (e.key === 'Escape') closeGallery();
+            if (e.key === 'ArrowLeft') prevImage();
+            if (e.key === 'ArrowRight') nextImage();
+        });
+        
+        // 触摸滑动支持
+        let touchStartX = 0;
+        document.getElementById('galleryModal').addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+        });
+        document.getElementById('galleryModal').addEventListener('touchend', (e) => {
+            const diff = touchStartX - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) nextImage();
+                else prevImage();
+            }
+        });
+
+        // 视频卡片点击事件
+        document.querySelectorAll('.video-card').forEach(card => {
+            card.addEventListener('click', (e) => {
+                // 忽略点击卡片内的链接
+                if (e.target.closest('a')) return;
+                
+                const videoType = card.dataset.video;
+                const videoSrc = card.dataset.src;
+                openVideoModal(videoType, videoSrc);
+            });
+        });
+
+        function openVideoModal(type, src) {
+            const modal = document.getElementById('videoModal');
+            const content = document.getElementById('videoContent');
+            
+            if (type === 'bilibili') {
+                // B站视频：提取BV号并嵌入
+                const bvMatch = src.match(/BV[\w]+/);
+                if (bvMatch) {
+                    content.innerHTML = `
+                        <iframe 
+                            src="//player.bilibili.com/player.html?isOutside=true&aid=${bvMatch[0].replace('BV', '')}&bvid=${bvMatch[0]}&p=1&autoplay=1"
+                            scrolling="no" 
+                            border="0" 
+                            frameborder="no" 
+                            framespacing="0" 
+                            allowfullscreen="true"
+                            class="video-iframe">
+                        </iframe>
+                    `;
+                }
+            } else if (type === 'local') {
+                // 本地视频：使用video标签
+                content.innerHTML = `
+                    <video class="video-player" controls autoplay>
+                        <source src="${src}" type="video/mp4">
+                        您的浏览器不支持视频播放
+                    </video>
+                `;
+            }
+            
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            lucide.createIcons();
+        }
+
+        function closeVideoModal() {
+            const modal = document.getElementById('videoModal');
+            const content = document.getElementById('videoContent');
+            
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+            
+            // 停止视频播放
+            const video = content.querySelector('video');
+            if (video) video.pause();
+            
+            // 清空内容
+            setTimeout(() => {
+                content.innerHTML = '';
+            }, 300);
+        }
+
+        // 点击背景关闭视频模态框
+        document.querySelector('.video-backdrop').addEventListener('click', closeVideoModal);
+
+        // ESC键关闭视频模态框
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && document.getElementById('videoModal').classList.contains('active')) {
+                closeVideoModal();
+            }
+        });
+    </script>
+</body>
+</html>

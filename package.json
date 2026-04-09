@@ -1,0 +1,11 @@
+{
+  "name": "Kemi Huang - 个人网站",
+  "version": "1.0.0",
+  "description": "韩国留学归国设计师 / AR 开发者个人网站",
+  "author": "Kemi Huang <kemi24678@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KeMiii/kemiii.github.io"
+  }
+}
