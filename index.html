@@ -18,7 +18,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@800;900&display=swap" rel="stylesheet">
     
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -104,6 +104,9 @@
                 <i data-lucide="chevron-down"></i>
             </div>
         </div>
+        
+        <!-- Hero 底部过渡 -->
+        <div class="hero-bottom-fade" id="heroBottomFade"></div>
     </section>
 
     <!-- 关于区域 -->
@@ -322,6 +325,9 @@
         </div>
     </section>
 
+    <!-- Resume 到 Portfolio 过渡 -->
+    <div class="section-transition"></div>
+
     <!-- 作品集区域 -->
     <section class="section portfolio" id="portfolio">
         <div class="section-grid"></div>
@@ -478,6 +484,9 @@
         </div>
     </section>
 
+    <!-- Portfolio 到 Photography 过渡 -->
+    <div class="section-transition"></div>
+
     <!-- 摄影区域 -->
     <section class="section photography" id="photography">
         <div class="floating-orb"></div>
@@ -549,6 +558,9 @@
             </div>
         </div>
     </section>
+
+    <!-- Photography 到 Drawings 过渡 -->
+    <div class="section-transition"></div>
 
     <!-- 习作区域 -->
     <section class="section drawings" id="drawings">
@@ -638,6 +650,9 @@
         </div>
     </section>
 
+    <!-- Drawings 到 Contact 过渡 -->
+    <div class="section-transition"></div>
+
     <!-- 联系区域 -->
     <section class="section contact" id="contact">
         <div class="floating-orb"></div>
@@ -687,7 +702,7 @@
                 <div class="contact-qr">
                     <div class="qr-card">
                         <h4 class="qr-title">扫码访问</h4>
-                        <div class="qr-code" id="qrcode"></div>
+                        <img src="assets/images/qrcode.png" alt="扫码访问网站" class="qr-code-img">
                         <p class="qr-desc">手机扫描二维码<br>直接访问我的网站</p>
                     </div>
                 </div>
@@ -765,6 +780,22 @@
     </div>
 
     <script>
+        // Hero 底部过渡动画
+        (function() {
+            const fade = document.getElementById('heroBottomFade');
+            if (!fade) return;
+            
+            let scrolled = false;
+            
+            window.addEventListener('scroll', function() {
+                if (scrolled) return;
+                if (window.scrollY > 100) {
+                    scrolled = true;
+                    fade.classList.add('fade-out');
+                }
+            }, { passive: true });
+        })();
+        
         // 图集数据
         const galleryData = {
             'laifu': [
